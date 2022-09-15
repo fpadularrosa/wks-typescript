@@ -14,16 +14,16 @@ let stringExample: string = undefined // Pero el valor "undefined" podemos asign
 //Visual studio code siempre va a tomar el tsconfig de la carpeta donde tengas abierto
 //tu proyecto, entonces, tal vez no veas los cambios
 
-function noImplicitType(firstArg, secondArg) {
+function noImplicitType(firstArg: any, secondArg: any) {
     console.log("First Argument: ", firstArg);
     console.log("Second Argument: ", secondArg);
   }
   
-  noImplicitType(1,2);
-  noImplicitType("Franco", "Etcheverri");
-  noImplicitType(true, null);
+noImplicitType(1,2);
+noImplicitType("Franco", "Etcheverri");
+noImplicitType(true, null);
 
-  // Any
+// Any
 let ejemploAny: any = "Matias";
 ejemploAny = 29;
 ejemploAny = null;
@@ -50,6 +50,6 @@ anyValue.metodo(); // Todo OK, compila. Falla en tiempo de ejecución si el mét
 let iDontKnow: unknown = "typescript";
 
 //ejercicio
-let nowIKnow: string = iDontKnow; //utiliza el casteo explicito para asignarle a nowIKnow un string;
+let nowIKnow: string = iDontKnow as string; //utiliza el casteo explicito para asignarle a nowIKnow un string;
 
 export {}
